@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -9,6 +9,17 @@ import Footer from "./components/Footer";
 
 
 function App() {
+  const mainRef = useRef(null)
+  const skillsRef = useRef(null)
+  const aboutRef = useRef(null)
+  const homeRef = useRef(null)
+  const contactRef = useRef(null)
+
+  // دالة برمجية للتحريك عند الضغط
+  const scrollToSection = (elementRef) => {
+    elementRef.current.scrollIntoView({ behavior: 'smooth',block: 'start' });
+  };
+
   const [showScrollUpIcon, setShowScrollUpIcon] = useState(false);
 
   useEffect(() => {
@@ -19,17 +30,17 @@ function App() {
   return (
     <div>
       <div className="first-view-screen" id="up">
-        <Header />
-        <Hero />
+        <Header onProjectsClick={()=> scrollToSection(mainRef)} onSkillsClick={()=> scrollToSection(skillsRef)} onAboutClick={()=> scrollToSection(aboutRef)}  onHomeClick={()=> scrollToSection(homeRef)} onContactClick={()=> scrollToSection(contactRef)}/>
+        <Hero ref={homeRef} />
       </div>
       <div className="divider" />
-      <Skills/>
+      <Skills ref={skillsRef}/>
       <div className="divider" />
-      <Main />
+      <Main ref={mainRef} />
       <div className="divider" />
-      <About/>
+      <About ref={aboutRef}/>
       <div className="divider" />
-      <Contact />
+      <Contact ref={contactRef}/>
       <div className="divider" />
       <Footer />
 

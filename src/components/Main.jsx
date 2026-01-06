@@ -1,14 +1,14 @@
 // React
-import { useEffect, useState } from "react";
-
+import { useEffect, useState, forwardRef } from "react";
 
 // All Projects
 import { allProjects } from "./allProjects";
-
 // Framer Motion
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Main() {
+ const Main = forwardRef((props, ref)=>{
+  
   const [currentActive, setCurrentActive] = useState("all");
   const [myProjects, setMyProjects] = useState(allProjects);
 
@@ -32,7 +32,7 @@ export default function Main() {
   }, [currentActive]);
 
   return (
-    <main className="py-20">
+    <main className="py-20" ref={ref} >
       <h2 className="header-section">Projects</h2>
 
       <div className="container flex flex-col justify-center gap-8">
@@ -44,7 +44,7 @@ export default function Main() {
               currentActive === "all"
                 ? "font-bold opacity-100 border-2 border-white scale-110"
                 : ""
-            } text-xl transform-cpu backdrop-blur-2xl w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
+            } text-xl transform-cpu bg-(--bg) text-(--text) w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
           >
             all projects
           </button>
@@ -54,7 +54,7 @@ export default function Main() {
               currentActive === "css"
                 ? " font-bold opacity-100 border-2 border-white scale-110"
                 : ""
-            } text-xl transform-cpu backdrop-blur-2xl w-36 lg:w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
+            } text-xl transform-cpu bg-(--bg) text-(--text) w-36 lg:w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
           >
             HTML & CSS
           </button>
@@ -64,7 +64,7 @@ export default function Main() {
               currentActive === "js"
                 ? " font-bold opacity-100 border-2 border-white scale-110"
                 : ""
-            } text-xl transform-cpu backdrop-blur-2xl w-36 lg:w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
+            } text-xl transform-cpu bg-(--bg) text-(--text) w-36 lg:w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
           >
             JS
           </button>
@@ -74,17 +74,17 @@ export default function Main() {
               currentActive === "react"
                 ? " font-bold opacity-100 border-2 border-white scale-110"
                 : ""
-            } text-xl transform-cpu backdrop-blur-2xl w-36 lg:w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
+            } text-xl transform-cpu bg-(--bg) text-(--text) w-36 lg:w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
           >
             React JS
           </button>
           <button
-            onClick={() => setCurrentActive("tailwend")}
+            onClick={() => setCurrentActive("tailwind")}
             className={`${
-              currentActive === "tailwend"
+              currentActive === "tailwind"
                 ? "f ont-bold opacity-100 border-2 border-white scale-110"
                 : ""
-            } text-xl transform-cpu backdrop-blur-2xl w-36 lg:w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
+            } text-xl transform-cpu bg-(--bg) text-(--text) w-36 lg:w-44 py-2 lg:py-4 lg:px-6  rounded-md opacity-80 cursor-pointer transition-all duration-300 hover:opacity-100 hover:scale-110`}
           >
             Tailwend
           </button>
@@ -98,7 +98,7 @@ export default function Main() {
                 <motion.article
                   layout
                   key={item.id}
-                  className="card rounded-md overflow-hidden transition-all duration-300 hover:rotate-1 hover:scale-105 "
+                  className="card rounded-md overflow-hidden transition-all duration-300 hover:scale-105 bg-(--bg)"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
@@ -107,20 +107,19 @@ export default function Main() {
                   <img src={item.image} alt={item.title} className="w-full" />
 
                   <div className="box p-4">
-                    <h3 className="mb-3 text-2xl">{item.title}</h3>
-                    <p className="mb-3">{item.body}</p>
+                    <h3 className="mb-3 text-2xl text-(--text)">{item.title}</h3>
+                    <p className="mb-5 text-(--text-muted)">{item.body}</p>
 
-                    <div className="footer-card flex justify-between items-center">
-                      <div
-                        style={{ display: "flex", gap: "10px" }}
-                        className="text-4xl"
+                    <div className="footer-card flex justify-between items-cente">
+                      <a href={item.gitHub} target="_blanck">
+                        <i className="fa-brands fa-github icon text-3xl hover:cursor-pointer text-(--text) hover:text-(--text-muted) hover:scale-105 transition-all duration-300"></i>
+                      </a>
+
+                      <a
+                        href={item.link}
+                        className="more flex items-center bg-(--bg-light) py-1 px-3 rounded-md text-(--text) text-xl gap-0.5 transition-all duration-300 hover:translate-x-1"
                       >
-                        <i className="fa-solid fa-link icon"></i>
-                        <i className="fa-brands fa-github icon"></i>
-                      </div>
-
-                      <a href="#" className="more flex items-center gap-0.5">
-                        <span>More </span>
+                        <span>Live </span>
                         <i className="fa-solid fa-arrow-right icon-arrow"></i>
                       </a>
                     </div>
@@ -134,3 +133,6 @@ export default function Main() {
     </main>
   );
 }
+)
+
+export default Main;

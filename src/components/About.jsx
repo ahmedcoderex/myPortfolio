@@ -1,5 +1,6 @@
-
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { forwardRef } from "react";
 
 // أنيميشن الأطفال (الـ boxes هتظهر واحدة ورا التانية)
 const boxVariants = {
@@ -14,9 +15,9 @@ const boxVariants = {
   }
 };
 
-export default function About() {
+const About = forwardRef((props, ref) => {
   return (
-    <section className="about py-20">
+    <section className="about py-20" ref={ref}>
       <motion.h2 
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -34,13 +35,13 @@ export default function About() {
             whileInView={{ opacity: 1 }}
             viewport={{  amount: 0.3 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-4xl mb-3 text-indigo-600"
+            className="text-4xl mb-3 text-(--text)"
           >
             Front-End Developer
           </motion.h3>
 
           <motion.p
-          className="text-xl mb-5 leading-8 text-gray-700"
+          className="text-xl mb-5 leading-8 text-(--text-muted)"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{  amount: 0.3 }}
@@ -58,7 +59,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{  }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="rounded-md bg-indigo-800 text-white py-2 px-6 cursor-pointer transition-all duration-300 hover:scale-105"
+            className="rounded-md text-(--text) bg-(--bg) py-2 px-6 cursor-pointer transition-all duration-300 hover:scale-105"
           >
             Download CV
           </motion.button>
@@ -79,36 +80,38 @@ export default function About() {
           }}
         >
           <motion.div variants={boxVariants} className="box backdrop-blur-2xl mb-5 p-2.5 flex gap-5 rounded-md ">
-            <div className="icon text-2xl bg-indigo-800 w-10 h-10 flex justify-center items-center rounded-full p-5">
-              <i className="fa-solid fa-code text-white"></i>
+            <div className="icon text-2xl bg-(--bg)  w-10 h-10 flex justify-center items-center rounded-full p-5">
+              <i className="fa-solid fa-code text-(--text)"></i>
             </div>
             <div>
-              <h4 className="text-2xl mb-3">Web Development</h4>
-              <p className="text-xl leading-8">I learn to design and develop interactive and modern web interfaces...</p>
+              <h4 className="text-2xl mb-3 text-(--text)">Web Development</h4>
+              <p className="text-xl leading-8 text-(--text-muted)">I learn to design and develop interactive and modern web interfaces...</p>
             </div>
           </motion.div>
 
           <motion.div variants={boxVariants} className="box backdrop-blur-2xl mb-5 p-2.5 flex gap-5 rounded-md ">
-            <div className="icon text-2xl bg-indigo-800 w-10 h-10 flex justify-center items-center rounded-full p-5">
-              <i className="fa-regular fa-user text-white"></i>
+            <div className="icon text-2xl bg-(--bg)  w-10 h-10 flex justify-center items-center rounded-full p-5">
+              <i className="fa-regular fa-user text-(--text)"></i>
             </div>
             <div>
-              <h4 className="text-2xl mb-3">UI/UX Design</h4>
-              <p className="text-xl leading-8">I explore ways to enhance user interfaces with CSS and Tailwind CSS...</p>
+              <h4 className="text-2xl mb-3 text-(--text)">UI/UX Design</h4>
+              <p className="text-xl leading-8 text-(--text-muted)">I explore ways to enhance user interfaces with CSS and Tailwind CSS...</p>
             </div>
           </motion.div>
 
           <motion.div variants={boxVariants} className="box backdrop-blur-2xl  p-2.5 flex gap-5 rounded-md ">
-            <div className="icon text-2xl bg-indigo-800 w-10 h-10 flex justify-center items-center rounded-full p-5">
-              <i className="fa-solid fa-chalkboard text-white"></i>
+            <div className="icon text-2xl bg-(--bg)  w-10 h-10 flex justify-center items-center rounded-full p-5">
+              <i className="fa-solid fa-chalkboard text-(--text)"></i>
             </div>
             <div>
-              <h4 className="text-2xl mb-3">Hands-On Learning</h4>
-              <p className="text-xl leading-8">I apply my skills daily in small projects...</p>
+              <h4 className="text-2xl mb-3 text-(--text)">Hands-On Learning</h4>
+              <p className="text-xl leading-8 text-(--text-muted)">I apply my skills daily in small projects...</p>
             </div>
           </motion.div>
         </motion.section>
       </div>
     </section>
   );
-}
+})
+
+export default About;

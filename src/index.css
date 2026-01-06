@@ -1,68 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 @import "tailwindcss";
 * {
-  box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  color: var(--title);
 }
 
 /* ===== Dark Mode (Default) ===== */
 :root {
-  --primary: #000000;
-  --secondary: rgb(24 24 27);
-  --border: rgba(150, 150, 160, 0.4);
-  --title: rgb(244 244 245);
-  --subtitle: rgba(239, 239, 239, 0.809);
-  --bgHeader: rgb(39 39 42);
-  --blue: #6f42c1;
-  --card-grad-start: rgba(40, 40, 40, 0.55);
-  --card-grad-end: rgba(41, 41, 41, 0.27);
-  --muted: rgba(203, 203, 203, 0.169);
-  --accent: #6f42c1;
-  --nav-bg: rgba(0,0,0,0.47);
-  --modal-overlay: rgba(15, 15, 15, 0.296);
-  --modal-panel: rgba(0,0,0,0.74);
+  --bg-dark: oklch(0.1 0 273);
+  --bg: oklch(0.15 0 273);
+  --bg-light: oklch(0.2 0 273);
+  --text: oklch(0.96 0 273);
+  --text-muted: oklch(0.76 0 273);
+  --highlight: oklch(0.5 0 273);
+  --border: oklch(0.4 0 273);
+  --border-muted: oklch(0.3 0 273);
+  --primary: oklch(0.76 0.1 273);
+  --secondary: oklch(0.76 0.1 93);
+  --danger: oklch(0.7 0.05 30);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
 }
 
 /* ===== Light Mode ===== */
 .light {
-  --primary: #ffffff;
-  --secondary: rgb(245 245 247);
-  --border: rgba(0, 0, 0, 0.15);
-  --title: #2d3748;
-  --subtitle: rgba(55, 55, 55, 0.75);
-  --bgHeader: rgb(250 250 250);
-  --blue: #6f42c1; /* ثابت */
-  --card-grad-start: rgba(255, 255, 255, 0.9);
-  --card-grad-end: rgba(250, 250, 250, 0.7);
-  --muted: rgba(0, 0, 0, 0.05);
-  --accent: #6f42c1;
-  --nav-bg: rgba(0,0,0,0.12);
-  --modal-overlay: rgba(0,0,0,0.08);
-  --modal-panel: rgba(0,0,0,0.5);
+  --bg-dark: oklch(0.92 0 273);
+  --bg: oklch(0.96 0 273);
+  --bg-light: oklch(1 0 273);
+  --text: oklch(0.15 0 273);
+  --text-muted: oklch(0.4 0 273);
+  --highlight: oklch(1 0 273);
+  --border: oklch(0.6 0 273);
+  --border-muted: oklch(0.7 0 273);
+  --primary: oklch(0.4 0.1 273);
+  --secondary: oklch(0.4 0.1 93);
+  --danger: oklch(0.5 0.05 30);
+  --warning: oklch(0.5 0.05 100);
+  --success: oklch(0.5 0.05 160);
+  --info: oklch(0.5 0.05 260);
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-
-.dark{
-  background: url(../public/dark.svg);
-  transition: 3s !important;
-}
-.light{
-  background: url(../public/light.svg);
-  transition: 3s !important;
-}
-
 body {
-  color: var(--title);
+  background-color: var(--bg-dark);
   font-family: "Roboto Slab", serif;
-  transition: .6s;
+  transition: 0.6s;
 }
-
 
 .container {
   width: 100%;
@@ -70,7 +57,7 @@ body {
   padding: 0 15px;
 }
 
-body::before {
+/* body::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
@@ -80,10 +67,7 @@ body::before {
               radial-gradient(circle at 40% 40%, rgba(255, 0, 150, 0.1) 0%, transparent 50%);
   background-attachment: fixed;
   z-index: -1;
-}
-
-
-
+} */
 
 .divider {
   border-bottom: 1px solid var(--border);
@@ -98,10 +82,8 @@ body::before {
   margin: 0px auto 80px;
   width: fit-content;
   font-size: 3.5rem;
+  color: var(--text);
 }
-
-
-
 
 .scrollToUp {
   position: fixed;
@@ -126,13 +108,13 @@ body::before {
   html {
     font-size: 14px;
   }
-
 }
+
 @media (max-width: 664px) {
   html {
     font-size: 12px;
   }
- 
+
   .scrollToUp {
     opacity: 0.5;
   }

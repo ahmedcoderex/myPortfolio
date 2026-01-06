@@ -7,15 +7,21 @@ import figma from "/figma.webp";
 // Animation
 import { Player } from "@lottiefiles/react-lottie-player";
 import animationDeveloper from "/public/animation/Developer.json";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+import { forwardRef } from "react";
 
-import { motion } from "motion/react";
-export default function Hero() {
+const Hero = forwardRef((props, ref) => {
   return (
-    <section className="hero">
+    <section className="hero" ref={ref}>
       <div className="container flex flex-col lg:flex-row justify-center lg:justify-between items-center min-h-screen">
         <div className="left-section lg:w-[60%] text-center lg:text-start">
-          <div className="parent-avatare relative w-fit mt-8 min-h-60 mx-auto lg:mx-0">
-            <img src={mainphoto} alt="main-photo" className="rounded-full " />
+          <div className="parent-avatare relative  w-87 mt-8 min-h-60 mx-auto lg:mx-0">
+            <img
+              src={mainphoto}
+              alt="main-photo"
+              className="rounded-full w-full "
+            />
             <motion.img
               initial={{ x: -10 }}
               animate={{ x: 10 }}
@@ -66,29 +72,33 @@ export default function Hero() {
             />
           </div>
 
-          <h1 className="font-semibold text-5xl">Ahmed Mohamed</h1>
-          <h2 className="font-medium mt-1 mb-5 text-3xl text-indigo-700">
+          <h1 className="font-semibold text-5xl mt-8 text-(--text)">
+            Ahmed Mohamed
+          </h1>
+          <h2 className="font-medium mt-1 mb-5 text-3xl text-(--secondary)">
             Front-end Developer
           </h2>
-          <p className="font-light text-xl mb-10 leading-8 text-gray-800">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-            porro quasi consequatur. Omnis quas corrupti, quis eum earum
-            praesentium, debitis necessitatibus, sapiente quibusdam harum
-            tempore laborum deleniti amet optio voluptatum?
+          <p className="text-xl mb-10 leading-8 text-(--text-muted) lg:w-[70%]">
+            Ahmed, passionate about the world of programming, working on
+            developing my skills and building projects that help me grow in the
+            tech field.
           </p>
 
-          <div className="social-madia flex gap-5 w-fit mx-auto lg:mx-0">
-            <a href="#">
-              <i class="fa-brands fa-facebook icon-social text-4xl opacity-60 transition-all duration-300 hover:opacity-100 scale-90"></i>
+          <div className="social-madia flex gap-5 w-fit mx-auto lg:mx-0 text-(--text-muted)">
+            <a href="#" target="_blanck">
+              <i className="fa-brands fa-facebook icon-social text-4xl opacity-60 transition-all duration-300 hover:opacity-100 scale-90"></i>
             </a>
-            <a href="#">
-              <i class="fa-brands fa-linkedin-in icon-social text-4xl opacity-60 transition-all duration-300 hover:opacity-100 scale-90"></i>
+            <a
+              href="https://www.linkedin.com/in/ahmed-mohamed-b54bb336a/"
+              target="_blanck"
+            >
+              <i className="fa-brands fa-linkedin-in icon-social text-4xl opacity-60 transition-all duration-300 hover:opacity-100 scale-90"></i>
             </a>
-            <a href="#">
-              <i class="fa-brands fa-github icon-social text-4xl opacity-60 transition-all duration-300 hover:opacity-100 scale-90"></i>
+            <a href="https://github.com/ahmedcoderex" target="_blanck">
+              <i className="fa-brands fa-github icon-social text-4xl opacity-60 transition-all duration-300 hover:opacity-100 scale-90"></i>
             </a>
-            <a href="#">
-              <i class="fa-brands fa-instagram icon-social text-4xl opacity-60 transition-all duration-300 hover:opacity-100 scale-90"></i>
+            <a href="#" target="_blanck">
+              <i className="fa-brands fa-instagram icon-social text-4xl opacity-60 transition-all duration-300 hover:opacity-100 scale-90"></i>
             </a>
           </div>
         </div>
@@ -105,4 +115,6 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+});
+
+export default Hero;
