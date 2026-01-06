@@ -1,0 +1,168 @@
+/* ==================
+   Table Of Contents
+====================
+
+1- Hero Design
+2- Icons Social Media
+3- Left Content
+4- Right Content
+5- Media Quary
+*/
+
+/* ======================= 
+    1- Hero Design
+========================== */
+
+.hero .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ======================= 
+    3- Left Content
+========================== */
+
+.hero .left-section {
+  width: 60%;
+}
+
+.hero .left-section .parent-avatare {
+  position: relative;
+  width: fit-content;
+  margin-bottom: 30px;
+  min-height: 240px;
+}
+
+.hero .left-section img:first-child {
+  width: 20rem;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--secondary);
+  animation: move-icons 6s ease infinite;
+}
+
+.hero .left-section .parent-avatare img:not(:first-child) {
+  position: absolute;
+  width: 4rem;
+  animation: move-icons 6s ease infinite;
+}
+
+@keyframes move-icons {
+  0% {
+    transform: translate(-10px);
+  }
+  50% {
+    transform: translate(10px);
+  }
+  100% {
+    transform: translate(-10px);
+  }
+}
+
+.hero .left-section .parent-avatare .html {
+  top: 10px;
+  left: 0px;
+}
+
+.hero .left-section .parent-avatare .css {
+  top: 0px;
+  right: 2px;
+}
+
+.hero .left-section .parent-avatare .js {
+  bottom: 0px;
+  left: 10px;
+}
+
+.hero .left-section .parent-avatare .figma {
+  bottom: 10px;
+  right: 10px;
+}
+
+.hero .left-section h1 {
+  color: var(--title);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.hero .left-section h2 {
+  color: var(--blue);
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.hero .left-section p {
+  color: var(--subtitle);
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+/* ======================= 
+    4- Right Content
+========================== */
+
+.hero .right-section img {
+  width: 20rem;
+  border-radius: 10px;
+  background-color: var(--muted);
+}
+
+/* =========================== 
+    2- Icons Social Media
+============================== */
+
+.hero .left-section .social-madia {
+  display: flex;
+  gap: 20px;
+  width: fit-content;
+}
+
+.icon-social {
+  font-size: 2.6rem !important;
+  opacity: 0.7;
+  transition: 0.3s !important;
+}
+
+.icon-social:hover {
+  scale: 0.9;
+  opacity: 1;
+}
+
+/* ==================== 
+    5- Media Quary
+======================= */
+@media (max-width: 852px) {
+  
+}
+
+@media (max-width: 1200px) {
+  .hero .container{
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .hero .left-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero .left-section .parent-avatare,
+  .hero .left-section .social-madia {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  
+  
+  .hero .right-section .devAnimation {
+    display: none;
+  }
+}

@@ -1,0 +1,120 @@
+
+/* ==================
+   Table Of Contents
+====================
+
+1- Left Section => Buttons
+2- Right Section
+3- Responsive Design
+*/
+
+section.about{
+    padding: 80px 0;
+}
+
+section.about .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* ======================= 
+    1- Left Section
+==========================  */
+section.about .left-section{
+    text-align: center;
+    width: 50%;
+}
+
+section.about .left-section h3{
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: var(--title);
+}
+
+section.about .left-section p{
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: var(--subtitle);
+    line-height: 1.9;
+    letter-spacing: 1px;
+}
+
+section.about .left-section button{
+    all: unset;
+    border-radius: 12px;
+    background-color: var(--accent);
+    color: #fff;
+    padding: .7rem 1.3rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+section.about .left-section button:hover{
+    scale: 1.04;
+}
+
+
+/* =======================   
+    2- Right Section
+========================== */
+
+section.about .right-section{
+    width: 50%;
+}
+
+section.about .right-section .box{
+    background-color: #78767614;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+}
+
+section.about .right-section .box div:first-child{
+    font-size: 1.3rem;
+    background-color: var(--blue);
+    height: fit-content;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+section.about .right-section .box div:first-child i{
+    color: #fff;
+}
+
+section.about .right-section .box div:last-child h4{
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+section.about .right-section .box div:last-child p{
+    font-size: 1rem;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+/* =======================   
+   3- Responsive Design
+========================== */
+
+@media (width < 991px) {
+    section.about .container{
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    section.about .right-section,
+    section.about .left-section{
+        width: 100%;
+    }
+}

@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+@import "tailwindcss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: var(--title);
+}
+
+/* ===== Dark Mode (Default) ===== */
+:root {
+  --primary: #000000;
+  --secondary: rgb(24 24 27);
+  --border: rgba(150, 150, 160, 0.4);
+  --title: rgb(244 244 245);
+  --subtitle: rgba(239, 239, 239, 0.809);
+  --bgHeader: rgb(39 39 42);
+  --blue: #6f42c1;
+  --card-grad-start: rgba(40, 40, 40, 0.55);
+  --card-grad-end: rgba(41, 41, 41, 0.27);
+  --muted: rgba(203, 203, 203, 0.169);
+  --accent: #6f42c1;
+  --nav-bg: rgba(0,0,0,0.47);
+  --modal-overlay: rgba(15, 15, 15, 0.296);
+  --modal-panel: rgba(0,0,0,0.74);
+}
+
+/* ===== Light Mode ===== */
+.light {
+  --primary: #ffffff;
+  --secondary: rgb(245 245 247);
+  --border: rgba(0, 0, 0, 0.15);
+  --title: #2d3748;
+  --subtitle: rgba(55, 55, 55, 0.75);
+  --bgHeader: rgb(250 250 250);
+  --blue: #6f42c1; /* ثابت */
+  --card-grad-start: rgba(255, 255, 255, 0.9);
+  --card-grad-end: rgba(250, 250, 250, 0.7);
+  --muted: rgba(0, 0, 0, 0.05);
+  --accent: #6f42c1;
+  --nav-bg: rgba(0,0,0,0.12);
+  --modal-overlay: rgba(0,0,0,0.08);
+  --modal-panel: rgba(0,0,0,0.5);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.dark{
+  background: url(../public/dark.svg);
+  transition: 3s !important;
+}
+.light{
+  background: url(../public/light.svg);
+  transition: 3s !important;
+}
+
+body {
+  color: var(--title);
+  font-family: "Roboto Slab", serif;
+  transition: .6s;
+}
+
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+
+
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(255, 0, 150, 0.1) 0%, transparent 50%);
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+
+/* Extra Small - أقل من 576px */
+/* width already 100% */
+
+/* Small - ≥576px */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Medium - ≥768px */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Large - ≥992px */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* X-Large - ≥1200px */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* XX-Large - ≥1400px */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.divider {
+  border-bottom: 1px solid var(--border);
+  /* margin: 3rem 0; */
+}
+
+.first-view-screen {
+  /* background: url(../public/bg.webp); */
+  background-position: center;
+  background-size: cover;
+}
+
+.header-section {
+  margin: 0px auto 80px;
+  width: fit-content;
+  font-size: 3.5rem;
+}
+
+.header-section span{
+  color: var(--accent);
+}
+
+.header-section i{
+  color: var(--accent);
+}
+
+.scrollToUp {
+  position: fixed;
+  bottom: 2rem;
+  right: 3%;
+  background-color: var(--blue);
+  width: 2.8rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.scrollToUp:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 664px) {
+  html {
+    font-size: 12px;
+  }
+ 
+  .scrollToUp {
+    opacity: 0.5;
+  }
+}

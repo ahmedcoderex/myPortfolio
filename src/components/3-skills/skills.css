@@ -1,0 +1,50 @@
+/* ==================
+   Table Of Contents
+====================
+
+1- Skill Design
+*/
+
+/* ======================= 
+    1- Skill Design
+========================== */
+
+section.skills {
+  padding: 80px 0;
+}
+
+section.skills .skills-boxs{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+section.skills .skill-box {
+  padding: 10px;
+  border-radius: 4px;
+  background:  #2323231f;
+}
+
+section.skills .skill-box .title-skill {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+section.skills .skill-box .paresent-cover {
+  width: 100%;
+  height: 5px;
+  background-color: aliceblue;
+  margin-bottom: 5px;
+}
+
+section.skills .skill-box .child-peresent {
+  color: var(--title);
+  height: 100%;
+  background-color: var(--blue);
+}
+
+section.skills .skill-box .grow-skill {
+  text-align: end;
+  font-size: 1.2rem;
+  color: var(--subtitle);
+}

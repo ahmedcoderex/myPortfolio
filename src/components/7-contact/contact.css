@@ -1,0 +1,116 @@
+/* ==================
+   Table Of Contents
+====================
+
+1- Form Section
+2- Icon Section
+3- Responsive Design
+*/
+
+section.contact {
+  padding: 80px 0;
+}
+
+section.contact .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ======================
+    1- Form Section
+=========================  */
+section form {
+  padding: 20px;
+  background-color: #23212139;
+  border-radius: 10px;
+}
+
+section form > div {
+  margin-bottom: 24px;
+}
+
+section form > div label {
+  display: inline-block;
+  font-size: 1.2rem;
+
+  margin-right: 1rem;
+  width: 159px;
+}
+
+section form > div input,
+section form > div textarea {
+  all: unset;
+  background-color: var(--muted);
+  padding: 8px 12px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid var(--blue);
+  font-size: 1.2rem;
+}
+
+section form > div textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+section form > div:nth-child(2) {
+  display: flex;
+}
+
+section form .submit {
+  all: unset;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  background-color: var(--secondary);
+  padding: 0.7rem 2rem;
+  border: 2px solid var(--border);
+  border-radius: 0.3rem;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+section form .submit:hover {
+  font-weight: bold;
+  border: 2px solid var(--blue);
+}
+
+/* ======================
+    2- Icon Section
+=========================  */
+
+/* ======================
+    3- Responsive Design
+=========================  */
+
+
+@media (max-width: 991px) {
+  section form {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  section form .submit {
+    align-self: center;
+  }
+  section form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  section.contact .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1300px) {
+  .animation-icon-contact .emailAnimation {
+    height: 20rem !important;
+  }
+}
