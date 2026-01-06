@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 @import "tailwindcss";
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
@@ -45,10 +43,10 @@
   --modal-panel: rgba(0,0,0,0.5);
 }
 
-
-html {
-  scroll-behavior: smooth;
+button{
+  cursor: pointer;
 }
+
 
 .dark{
   background: url(../public/dark.svg);
@@ -70,8 +68,6 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
-
-
 }
 
 body::before {
@@ -87,51 +83,13 @@ body::before {
 }
 
 
-/* Extra Small - أقل من 576px */
-/* width already 100% */
 
-/* Small - ≥576px */
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-/* Medium - ≥768px */
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-/* Large - ≥992px */
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-/* X-Large - ≥1200px */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-
-/* XX-Large - ≥1400px */
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
-}
 
 .divider {
   border-bottom: 1px solid var(--border);
-  /* margin: 3rem 0; */
 }
 
 .first-view-screen {
-  /* background: url(../public/bg.webp); */
   background-position: center;
   background-size: cover;
 }
@@ -142,13 +100,8 @@ body::before {
   font-size: 3.5rem;
 }
 
-.header-section span{
-  color: var(--accent);
-}
 
-.header-section i{
-  color: var(--accent);
-}
+
 
 .scrollToUp {
   position: fixed;

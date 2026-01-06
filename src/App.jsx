@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import Header from "./components/1-header/header";
-import Hero from "./components/2-hero/Hero";
-import Skills from "./components/3-skills/Skills"
-import Main from "./components/4-main/Main";
-import About from "./components/5-about/About";
-import Services from "./components/6-services/Services";
-import Contact from "./components/7-contact/Contact";
-import Footer from "./components/8-footer/Footer";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
+import Main from "./components/Main";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -29,8 +28,6 @@ function App() {
       <Main />
       <div className="divider" />
       <About/>
-      <div className="divider" />
-      <Services/>
       <div className="divider" />
       <Contact />
       <div className="divider" />
