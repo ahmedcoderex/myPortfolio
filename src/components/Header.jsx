@@ -11,6 +11,7 @@ export default function Header({
   const [showModal, setShowModal] = useState(false);
   const [changeBgHeader, setChangeBgHeader] = useState(false);
   const [mode, setMode] = useState(localStorage.getItem("theme") ?? "dark");
+  const [anyButtomActive, setAnyButtomActive] = useState("Home") 
 
   addEventListener("scroll", () => {
     scrollY > 400 ? setChangeBgHeader(true) : setChangeBgHeader(false);
@@ -42,55 +43,60 @@ export default function Header({
         <nav
           className={`${
             showModal
-              ? "absolute left-0 right-0 top-full bg-(--bg) flex flex-col  rounded-md"
+              ? " absolute left-0 right-0 top-full bg-(--bg) flex flex-col  rounded-md animate-[]"
               : "hidden"
-          } lg:flex lg:relative lg:flex-row lg:top-0 gap-8 py-3 px-6 rounded-md`}
+          } lg:flex lg:relative lg:flex-row lg:top-0 gap-3 py-3 px-6 rounded-md`}
         >
           <button
-            className="text-xl transition-all duration-300"
-            onClick={()=>{
+            className={`${anyButtomActive == "Home" ? "bg-white text-black font-bold":""} hover:bg-white hover:text-black hover:font-bold rounded-md py-3 px-4  text-xl transition-all duration-300`}
+            onClick={() => {
               onHomeClick();
-              setShowModal(false)
+              setShowModal(false);
+              setAnyButtomActive("Home")
             }}
           >
             Home
           </button>
 
           <button
-            className="text-xl transition-all duration-300"
-            onClick={()=>{
+            className={`${anyButtomActive == "Skills" ? "bg-white text-black font-bold":""} hover:bg-white hover:text-black hover:font-bold rounded-md py-3 px-4  text-xl transition-all duration-300`}
+            onClick={() => {
               onSkillsClick();
               setShowModal(false);
+              setAnyButtomActive("Skills")
             }}
           >
             Skills
           </button>
 
           <button
-            className="text-xl transition-all duration-300"
-            onClick={()=>{
+            className={`${anyButtomActive == "Projects" ? "bg-white text-black font-bold":""} hover:bg-white hover:text-black hover:font-bold rounded-md py-3 px-4 text-xl transition-all duration-300`}
+            onClick={() => {
               onProjectsClick();
               setShowModal(false);
+              setAnyButtomActive("Projects")
             }}
           >
             Projects
           </button>
 
           <button
-            className="text-xl transition-all duration-300 "
-            onClick={()=>{
+            className={`${anyButtomActive == "About" ? "bg-white text-black font-bold":""} hover:bg-white hover:text-black hover:font-bold rounded-md py-3 px-4 text-xl transition-all duration-300`}
+            onClick={() => {
               onAboutClick();
               setShowModal(false);
+              setAnyButtomActive("About")
             }}
           >
             About Me
           </button>
 
           <button
-            className="text-xl transition-all duration-300"
-            onClick={()=>{
+            className={` ${anyButtomActive == "Contact" ? "bg-white text-black font-bold":""} hover:bg-white hover:text-black hover:font-bold rounded-md py-3 px-4 text-xl transition-all duration-300`}
+            onClick={() => {
               onContactClick();
               setShowModal(false);
+              setAnyButtomActive("Contact")
             }}
           >
             Contact Us
