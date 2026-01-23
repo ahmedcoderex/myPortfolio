@@ -6,6 +6,7 @@ import Main from "./components/Main";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Certificates from "./components/Certificates";
 
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
       <Main ref={mainRef} />
       <div className="divider" />
       <About ref={aboutRef}/>
+      <div className="divider" />
+      <Certificates/>
       <div className="divider" />
       <Contact ref={contactRef}/>
       <div className="divider" />

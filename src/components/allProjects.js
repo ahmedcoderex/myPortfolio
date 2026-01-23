@@ -29,7 +29,7 @@ export const allProjects = [
     category: ["react","tailwind"],
     id: uuidv4(),
     title: "بيت الكتاب",
-    body: "Bait Al-Kitab Store is a modern online platform for selling books, offering a smooth browsing experience with direct access to the latest releases and exclusive offers for readers.",
+    body: "Bait Al-Kitab Store is a modern online book platform offering easy browsing, latest releases, and exclusive deals for readers.",
     link: "www.google.com",
     gitHub: "https://github.com/ahmedcoderex/EDU-Learning",
     image: v16,
