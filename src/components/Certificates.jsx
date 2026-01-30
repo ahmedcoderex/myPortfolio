@@ -33,6 +33,7 @@ export default function Certificates() {
                     src={`./certificates/v${e}.png`}
                     alt="photo certificates"
                     className="rounded-md shadow-md shadow-gray-300"
+                    loading="lazy"
                   />
                 </SwiperSlide>
               );

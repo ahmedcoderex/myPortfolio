@@ -72,12 +72,13 @@ const Hero = forwardRef((props, ref) => {
             />
           </div>
 
-          <h1 className="font-semibold text-5xl mt-8 text-(--text)">
+          <h1 className="font-semibold text-7xl mt-8 text-(--text)">
             Ahmed Mohamed
           </h1>
-          <h2 className="font-medium mt-1 mb-5 text-3xl text-(--secondary)">
+          <h2 className="font-medium mt-1 mb-5 text-5xl text-transparent  stroke-white ">
             Front-end Developer
           </h2>
+
           <p className="text-xl mb-10 leading-8 text-(--text-muted) lg:w-[70%]">
             Ahmed, passionate about the world of programming, working on
             developing my skills and building projects that help me grow in the

@@ -108,9 +108,9 @@ export default function Header({
           {/* MODE */}
           <div className="mode" onClick={handleModeClick}>
             {mode === "dark" ? (
-              <i class="fa-regular fa-moon moon-icon"></i>
+              <i className="fa-regular fa-moon moon-icon"></i>
             ) : (
-              <i class="fa-solid fa-sun sun-icon"></i>
+              <i className="fa-solid fa-sun sun-icon"></i>
             )}
           </div>
           {/*==== MODE ====*/}

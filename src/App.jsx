@@ -1,4 +1,4 @@
-import { useEffect, useState,useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -8,17 +8,16 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Certificates from "./components/Certificates";
 
-
 function App() {
-  const mainRef = useRef(null)
-  const skillsRef = useRef(null)
-  const aboutRef = useRef(null)
-  const homeRef = useRef(null)
-  const contactRef = useRef(null)
+  const mainRef = useRef(null);
+  const skillsRef = useRef(null);
+  const aboutRef = useRef(null);
+  const homeRef = useRef(null);
+  const contactRef = useRef(null);
 
   // دالة برمجية للتحريك عند الضغط
   const scrollToSection = (elementRef) => {
-    elementRef.current.scrollIntoView({ behavior: 'smooth',block: 'start' });
+    elementRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const [showScrollUpIcon, setShowScrollUpIcon] = useState(false);
@@ -31,19 +30,25 @@ function App() {
   return (
     <div>
       <div className="first-view-screen" id="up">
-        <Header onProjectsClick={()=> scrollToSection(mainRef)} onSkillsClick={()=> scrollToSection(skillsRef)} onAboutClick={()=> scrollToSection(aboutRef)}  onHomeClick={()=> scrollToSection(homeRef)} onContactClick={()=> scrollToSection(contactRef)}/>
+        <Header
+          onProjectsClick={() => scrollToSection(mainRef)}
+          onSkillsClick={() => scrollToSection(skillsRef)}
+          onAboutClick={() => scrollToSection(aboutRef)}
+          onHomeClick={() => scrollToSection(homeRef)}
+          onContactClick={() => scrollToSection(contactRef)}
+        />
         <Hero ref={homeRef} />
       </div>
       <div className="divider" />
-      <Skills ref={skillsRef}/>
+      <Skills ref={skillsRef} />
       <div className="divider" />
       <Main ref={mainRef} />
       <div className="divider" />
-      <About ref={aboutRef}/>
+      <About ref={aboutRef} />
       <div className="divider" />
-      <Certificates/>
+      <Certificates />
       <div className="divider" />
-      <Contact ref={contactRef}/>
+      <Contact ref={contactRef} />
       <div className="divider" />
       <Footer />
 
@@ -51,7 +56,7 @@ function App() {
         href="#up"
         style={{ opacity: showScrollUpIcon ? 1 : 0, transition: "3s" }}
       >
-        <i class="fa-solid fa-chevron-up scrollToUp"></i>
+        <i className="fa-solid fa-chevron-up scrollToUp"></i>
       </a>
     </div>
   );

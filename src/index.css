@@ -44,6 +44,13 @@
   --info: oklch(0.5 0.05 260);
 }
 
+.stroke-white {
+  -webkit-text-stroke: 1px white; /* حدود النص */
+}
+
+.stroke-black {
+  -webkit-text-stroke: 1px black; /* حدود النص */
+}
 .light{
 
   background-image: url("bg-light.svg");
